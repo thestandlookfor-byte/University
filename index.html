@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="University course registration portal" />
+    <title>University Course Registration</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="nav-wrap">
+        <a class="brand" href="#" aria-label="University Portal home">
+          <span class="brand-mark">U</span>
+          <span>University Portal</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="#courses">Courses</a>
+          <a class="nav-button" href="#register">Register</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Fall 2026 Registration</p>
+          <h1>Build the skills for<br />your next chapter.</h1>
+          <p class="hero-copy">Explore practical courses and register for the classes that support your academic and career goals.</p>
+          <a class="primary-button" href="#courses">Explore courses</a>
+        </div>
+        <div class="hero-panel" aria-hidden="true">
+          <span class="panel-label">Now open</span>
+          <strong>3</strong>
+          <span>courses available</span>
+        </div>
+      </section>
+
+      <section id="courses" class="courses-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Available courses</p>
+            <h2>Choose your course</h2>
+          </div>
+          <p>Designed for practical, hands-on learning.</p>
+        </div>
+
+        <div class="course-container">
+          <article class="card">
+            <span class="course-number">01</span>
+            <h3>Web Development</h3>
+            <p>Learn the foundations of HTML, CSS, and JavaScript through practical projects.</p>
+            <div class="course-footer">
+              <span class="course-tag">Development</span>
+              <button class="detail-button" type="button" data-course="Web Development" data-description="Build responsive websites and interactive user interfaces using modern front-end tools." data-credit="3 Credits" data-duration="12 Weeks" data-level="Beginner" data-points="HTML and CSS fundamentals|Responsive web design|JavaScript interactions">View details</button>
+            </div>
+          </article>
+          <article class="card">
+            <span class="course-number">02</span>
+            <h3>Database Systems</h3>
+            <p>Explore data management, database design, and SQL for real-world applications.</p>
+            <div class="course-footer">
+              <span class="course-tag">Data</span>
+              <button class="detail-button" type="button" data-course="Database Systems" data-description="Learn to design, query, and maintain structured databases for practical applications." data-credit="3 Credits" data-duration="12 Weeks" data-level="Intermediate" data-points="Relational database design|SQL queries and joins|Data security and backup">View details</button>
+            </div>
+          </article>
+          <article class="card">
+            <span class="course-number">03</span>
+            <h3>Network Security</h3>
+            <p>Understand computer networks, security principles, and common threats.</p>
+            <div class="course-footer">
+              <span class="course-tag">Security</span>
+              <button class="detail-button" type="button" data-course="Network Security" data-description="Explore network infrastructure, defensive strategies, and methods for identifying threats." data-credit="3 Credits" data-duration="12 Weeks" data-level="Intermediate" data-points="Network fundamentals|Threat detection and prevention|Secure system configuration">View details</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <dialog id="courseDialog" class="course-dialog" aria-labelledby="dialogTitle">
+        <div class="dialog-header">
+          <div>
+            <p class="eyebrow">Course details</p>
+            <h2 id="dialogTitle">Course name</h2>
+          </div>
+          <button id="closeDialog" class="close-button" type="button" aria-label="Close course details">&times;</button>
+        </div>
+        <p id="dialogDescription" class="dialog-description"></p>
+        <div class="course-meta">
+          <div><span>Credits</span><strong id="dialogCredit"></strong></div>
+          <div><span>Duration</span><strong id="dialogDuration"></strong></div>
+          <div><span>Level</span><strong id="dialogLevel"></strong></div>
+        </div>
+        <h3>What you will learn</h3>
+        <ul id="dialogPoints" class="learning-points"></ul>
+        <button id="dialogRegister" class="dialog-register" type="button">Register for this course</button>
+      </dialog>
+
+      <section id="register" class="registration-section">
+        <div class="form-heading">
+          <p class="eyebrow">Student registration</p>
+          <h2>Reserve your place</h2>
+          <p>Complete the form below to register for a course.</p>
+        </div>
+        <form id="regForm">
+          <div class="field-grid">
+            <div class="field">
+              <label for="stuName">Student name</label>
+              <input type="text" id="stuName" placeholder="Enter your full name" required />
+            </div>
+            <div class="field">
+              <label for="stuId">Student ID</label>
+              <input type="text" id="stuId" placeholder="Enter your student ID" required />
+            </div>
+            <div class="field">
+              <label for="stuEmail">Email address</label>
+              <input type="email" id="stuEmail" placeholder="name@example.com" required />
+            </div>
+            <div class="field">
+              <label for="courseSelect">Course</label>
+              <select id="courseSelect">
+                <option value="Web Development">Web Development</option>
+                <option value="Database Systems">Database Systems</option>
+                <option value="Network Security">Network Security</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit">Submit registration</button>
+          <p id="message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <p>&copy; 2026 University Portal</p>
+        <p>Learning for tomorrow.</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
